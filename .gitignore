@@ -6,4 +6,6 @@
 /pcb/*.gbrjob
 /pcb/*.kicad_prl
 /pcb/*-backups
+/pcb/*.bak
+/pcb/.history
 /pcb/fp-info-cache
