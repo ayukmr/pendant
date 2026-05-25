@@ -1003,7 +1003,7 @@
 				)
 			)
 		)
-		(property "Value" "49.9"
+		(property "Value" "75"
 			(at 0 1.17 90)
 			(layer "F.Fab")
 			(uuid "b011c89d-f415-4a1c-98e8-104c21537b61")
@@ -3409,14 +3409,14 @@
 	(footprint "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm"
 		(layer "F.Cu")
 		(uuid "0a3c32af-19c7-4928-8a8b-c3f0cf4011dd")
-		(at 86.1 84 90)
+		(at 86.1 81 90)
 		(descr "THT pad as test Point, diameter 2.0mm, hole diameter 1.0mm")
 		(tags "test point THT pad")
 		(property "Reference" "TP38"
 			(at 0 -1.998 90)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "cf1bdc91-6135-4f03-9235-fb0fee09e5d7")
+			(uuid "b8ef00c9-c609-47b7-b4fa-e84be6f3a594")
 			(effects
 				(font
 					(size 1 1)
@@ -3427,7 +3427,7 @@
 		(property "Value" "TestPoint"
 			(at 0 2.05 90)
 			(layer "F.Fab")
-			(uuid "5a7011ca-0898-49ef-b446-89f1215f2f87")
+			(uuid "ef01ff21-2c20-4677-9d33-a9f78d4642c7")
 			(effects
 				(font
 					(size 1 1)
@@ -3440,7 +3440,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "2bbe8c9a-0525-42ad-a931-01cdf9fe6dad")
+			(uuid "0ed6dbae-3cc5-47e9-9a06-5192473a6b90")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3453,7 +3453,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "29f73a41-2743-4a50-9b4f-99f3593ae980")
+			(uuid "48483b6c-157b-4ae6-851f-f852d555df3d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4642,102 +4642,6 @@
 				(xyz 0 0 0)
 			)
 		)
-	)
-	(footprint "kikit:Board"
-		(layer "F.Cu")
-		(uuid "103d80f8-e953-496f-a8a9-39a0ef0764cd")
-		(at 100.852053 48.1)
-		(descr "Mark board for extraction")
-		(property "Reference" "back"
-			(at -4.5 -5 0)
-			(layer "Dwgs.User")
-			(uuid "66f947a0-ad6a-489e-8905-33886fce0ed3")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Board"
-			(at -7.25 -5 0)
-			(layer "Dwgs.User")
-			(uuid "e4968e1a-7cf1-4e97-83d1-8b3e98c3bbe1")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "f0cd2247-754d-4be3-991f-cdc1be39bddf")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 0 0 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "841e6c9c-056b-4698-a66a-86e900e1817f")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(attr board_only exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_line
-			(start -1.25 -4)
-			(end -9.25 -4)
-			(stroke
-				(width 0.2)
-				(type solid)
-			)
-			(layer "Dwgs.User")
-			(uuid "ec7cc2dd-ae68-450e-9d57-aacbad7cf019")
-		)
-		(fp_line
-			(start 0 0)
-			(end -1.25 -4)
-			(stroke
-				(width 0.2)
-				(type solid)
-			)
-			(layer "Dwgs.User")
-			(uuid "f6e2ec66-d91e-49d8-8424-d7c7f20992e8")
-		)
-		(fp_line
-			(start 0 0)
-			(end -1 -0.5)
-			(stroke
-				(width 0.2)
-				(type solid)
-			)
-			(layer "Dwgs.User")
-			(uuid "5fbe6a63-9d12-4052-84ea-bf6f305ec9ca")
-		)
-		(fp_line
-			(start 0 0)
-			(end 0.5 -1)
-			(stroke
-				(width 0.2)
-				(type solid)
-			)
-			(layer "Dwgs.User")
-			(uuid "1ea5b63a-67bc-4989-98d6-a9736c228b78")
-		)
-		(embedded_fonts no)
 	)
 	(footprint "Project:LED_0402_1005Metric"
 		(layer "F.Cu")
@@ -6089,7 +5993,7 @@
 				)
 			)
 		)
-		(property "Value" "49.9"
+		(property "Value" "75"
 			(at 0 1.17 0)
 			(layer "F.Fab")
 			(uuid "200167b9-fb34-413d-b18a-1819c57045fe")
@@ -6952,102 +6856,6 @@
 				(xyz 0 0 0)
 			)
 		)
-	)
-	(footprint "kikit:Board"
-		(layer "F.Cu")
-		(uuid "1a0e0d6d-d9a4-4d40-99e7-3dfba07502ac")
-		(at 71.352053 48.1)
-		(descr "Mark board for extraction")
-		(property "Reference" "front"
-			(at -4.5 -5 0)
-			(layer "Dwgs.User")
-			(uuid "4a9202ba-9f27-4727-bd94-f98952b11594")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Board"
-			(at -7.25 -5 0)
-			(layer "Dwgs.User")
-			(uuid "3fe5d7ef-38dd-4b28-80a3-b3bafa2f3bcc")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "50f8fcdb-73c3-4a3e-8e86-48b6596d2b6d")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 0 0 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "6d49f799-e47e-4053-8fb7-401495e0c7d0")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(attr board_only exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_line
-			(start -1.25 -4)
-			(end -9.25 -4)
-			(stroke
-				(width 0.2)
-				(type solid)
-			)
-			(layer "Dwgs.User")
-			(uuid "eb8f6e99-9cca-4dab-ab82-313fe02aa35c")
-		)
-		(fp_line
-			(start 0 0)
-			(end -1.25 -4)
-			(stroke
-				(width 0.2)
-				(type solid)
-			)
-			(layer "Dwgs.User")
-			(uuid "42a2d9ec-8644-44dc-b1db-dae615cac116")
-		)
-		(fp_line
-			(start 0 0)
-			(end -1 -0.5)
-			(stroke
-				(width 0.2)
-				(type solid)
-			)
-			(layer "Dwgs.User")
-			(uuid "08dfdf25-585d-43b0-99fa-44a64704a0a5")
-		)
-		(fp_line
-			(start 0 0)
-			(end 0.5 -1)
-			(stroke
-				(width 0.2)
-				(type solid)
-			)
-			(layer "Dwgs.User")
-			(uuid "3fab00d9-afab-4d60-9b59-adf319b9b1aa")
-		)
-		(embedded_fonts no)
 	)
 	(footprint "Project:LED_0402_1005Metric"
 		(layer "F.Cu")
@@ -13011,14 +12819,14 @@
 	(footprint "TestPoint:TestPoint_Pad_D3.0mm"
 		(layer "F.Cu")
 		(uuid "3fe0c824-c2f1-4a89-98bc-22ea223920bc")
-		(at 80.6 89.8)
+		(at 80.6 86.8)
 		(descr "SMD pad as test Point, diameter 3.0mm")
 		(tags "test point SMD pad")
 		(property "Reference" "TP44"
 			(at 0 -2.398 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "f6455318-abb6-4517-a4d9-c63ca28e1847")
+			(uuid "c1dbd0ab-b50f-45a4-9a83-a230b83aae43")
 			(effects
 				(font
 					(size 1 1)
@@ -13029,7 +12837,7 @@
 		(property "Value" "TestPoint"
 			(at 0 2.55 0)
 			(layer "F.Fab")
-			(uuid "3a99829c-e8d9-4ca9-bd80-336cc8c9322d")
+			(uuid "04ea4841-8d84-44c3-8399-75b6f31ebb49")
 			(effects
 				(font
 					(size 1 1)
@@ -13042,7 +12850,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "ac49bb59-3fd5-438e-884a-c7a8c2024448")
+			(uuid "68381de6-9aec-4e0f-a4a0-c0546f9044e1")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13055,7 +12863,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6e8ab04b-9bfc-4b31-bd4b-51fca145b947")
+			(uuid "34cec778-c58b-4155-8dbd-cf2c76c1d05b")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13578,7 +13386,7 @@
 			(at 0 -1.648 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "3f421a46-b63b-4104-a494-3e8a157ea610")
+			(uuid "5f41992e-1f36-4921-b173-e2648a0cbe66")
 			(effects
 				(font
 					(size 1 1)
@@ -13589,7 +13397,7 @@
 		(property "Value" "TestPoint"
 			(at 0 1.75 0)
 			(layer "F.Fab")
-			(uuid "2fa0352e-3734-41bb-90c5-82509968dcad")
+			(uuid "90e6fe60-a348-44c5-b9b0-636ec02a633b")
 			(effects
 				(font
 					(size 1 1)
@@ -13602,7 +13410,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "9b7499a2-3a04-47c9-861c-f189f700c90c")
+			(uuid "d3057df8-6574-4933-a134-c6821440fa1e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13615,7 +13423,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "07bd611c-b3f1-432c-acc3-7138f8e50c97")
+			(uuid "91434c1b-e5e1-45da-abbc-7fc3ccd6c7d8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15478,7 +15286,7 @@
 				)
 			)
 		)
-		(property "Value" "49.9"
+		(property "Value" "75"
 			(at 0 1.17 90)
 			(layer "F.Fab")
 			(uuid "1728cfca-0c5d-44c3-bf81-e8d692729414")
@@ -15910,7 +15718,7 @@
 				)
 			)
 		)
-		(property "Value" "49.9"
+		(property "Value" "75"
 			(at 1.11 2 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -16568,7 +16376,7 @@
 				)
 			)
 		)
-		(property "Value" "49.9"
+		(property "Value" "75"
 			(at 0 1.17 0)
 			(layer "F.Fab")
 			(uuid "f59f76d5-f813-4cd5-b45d-77047a4bd785")
@@ -18441,7 +18249,7 @@
 				)
 			)
 		)
-		(property "Value" "49.9"
+		(property "Value" "75"
 			(at 0 1.17 90)
 			(layer "F.Fab")
 			(uuid "1d956eac-9c33-4b59-81d1-28db09c9ba00")
@@ -21290,7 +21098,7 @@
 			(at 0 -1.648 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "ea8e2316-e79b-456d-8a32-aabd5312d760")
+			(uuid "355dfa70-d5fc-49f7-8cc2-49d9bf347670")
 			(effects
 				(font
 					(size 1 1)
@@ -21301,7 +21109,7 @@
 		(property "Value" "TestPoint"
 			(at 0 1.75 0)
 			(layer "F.Fab")
-			(uuid "f7faaa63-116a-430e-b883-cb9ae2323240")
+			(uuid "7814ffc3-8d6e-4f24-892f-75f8d14d69df")
 			(effects
 				(font
 					(size 1 1)
@@ -21314,7 +21122,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "00fa951f-3591-4d13-a474-9868a7d07f2b")
+			(uuid "c20b5946-e2ec-4a51-92df-f7003f5cdf1e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21327,7 +21135,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "ebfefd8c-6198-43a2-a98c-0fdfe7e1db03")
+			(uuid "75026d6a-4c8e-45c4-8389-b32c9dfceff4")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21408,7 +21216,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7k"
+		(property "Value" "10k"
 			(at 0 1.17 90)
 			(layer "F.Fab")
 			(uuid "f332e4c3-958c-48a1-b1c5-0924894190dc")
@@ -22507,7 +22315,7 @@
 			(at 0 -1.648 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "401ba828-b3e9-4d08-907b-a459b132e0ee")
+			(uuid "60c74ab0-071c-49ee-b073-d71f067b3b53")
 			(effects
 				(font
 					(size 1 1)
@@ -22518,7 +22326,7 @@
 		(property "Value" "TestPoint"
 			(at 0 1.75 0)
 			(layer "F.Fab")
-			(uuid "9c65c059-7be1-4d5c-90a6-e85714617171")
+			(uuid "29aef60a-4f6f-463c-86d7-fe872b07e095")
 			(effects
 				(font
 					(size 1 1)
@@ -22531,7 +22339,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "7c4d7f8e-f96f-46c9-a1ec-eb41949e7ba1")
+			(uuid "fd426ce7-4ffa-42db-a8a9-4c140d60a5c8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22544,7 +22352,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "59876eb2-8548-4ae2-8535-d63548e9ac04")
+			(uuid "2aac4038-23d3-4b3f-b161-1e005505961e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22625,7 +22433,7 @@
 				)
 			)
 		)
-		(property "Value" "49.9"
+		(property "Value" "75"
 			(at 0 1.17 90)
 			(layer "F.Fab")
 			(uuid "4b966968-8aac-4fd6-a158-daa212eac462")
@@ -23823,7 +23631,7 @@
 				)
 			)
 		)
-		(property "Value" "15k"
+		(property "Value" "22k"
 			(at 0 1.17 0)
 			(layer "F.Fab")
 			(uuid "63d09a75-001e-491a-878a-1991de3f7989")
@@ -27698,14 +27506,14 @@
 	(footprint "TestPoint:TestPoint_Pad_D3.0mm"
 		(layer "F.Cu")
 		(uuid "89c1f862-75b6-44f5-8906-f2644f7e7498")
-		(at 86.1 89.8)
+		(at 86.1 86.8)
 		(descr "SMD pad as test Point, diameter 3.0mm")
 		(tags "test point SMD pad")
 		(property "Reference" "TP43"
 			(at 0 -2.398 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "402ef138-87d2-4dbe-a2fc-a94d453babfe")
+			(uuid "825bf3ea-840a-4e28-b360-cdcc91119ecc")
 			(effects
 				(font
 					(size 1 1)
@@ -27716,7 +27524,7 @@
 		(property "Value" "TestPoint"
 			(at 0 2.55 0)
 			(layer "F.Fab")
-			(uuid "2a5ab6a9-c71d-4abe-90fe-9a7f996e1313")
+			(uuid "cde1cf20-37dc-47f4-8641-e660505fa867")
 			(effects
 				(font
 					(size 1 1)
@@ -27729,7 +27537,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "de3fa436-abd0-4b6c-b445-77d5d235c0e2")
+			(uuid "53044071-4eaf-42f9-bcee-5d567adc6af9")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27742,7 +27550,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "4541add9-2589-4e4a-a4d5-5e931d494dc4")
+			(uuid "b022d6fa-5c40-43e6-9255-21db91d16efe")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28033,14 +27841,14 @@
 	(footprint "TestPoint:TestPoint_Pad_D3.0mm"
 		(layer "F.Cu")
 		(uuid "8c66d3bb-f492-47c2-8534-28776054cc63")
-		(at 75.1 89.8)
+		(at 75.1 86.8)
 		(descr "SMD pad as test Point, diameter 3.0mm")
 		(tags "test point SMD pad")
 		(property "Reference" "TP45"
 			(at 0 -2.398 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "c497eced-0cc9-4932-8da7-c307008ae883")
+			(uuid "c22ee3de-4bc4-4488-ab91-3b8d60472f10")
 			(effects
 				(font
 					(size 1 1)
@@ -28051,7 +27859,7 @@
 		(property "Value" "TestPoint"
 			(at 0 2.55 0)
 			(layer "F.Fab")
-			(uuid "b7de4579-c619-48b1-bf38-b62dd11db7e8")
+			(uuid "a4c5fe38-9ffe-4c0b-9cf0-adf5e0724f26")
 			(effects
 				(font
 					(size 1 1)
@@ -28064,7 +27872,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "7b0d1234-3df9-43ec-9019-8c8c91fe68e1")
+			(uuid "aa1cb7c3-5498-4b1b-a19a-17738f68ab98")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28077,7 +27885,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6bbf72e0-34a9-4e5c-9fa5-8bf2e9a3493d")
+			(uuid "6c718e3d-8f14-4364-a844-9462bfea81c2")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28827,7 +28635,7 @@
 				)
 			)
 		)
-		(property "Value" "49.9"
+		(property "Value" "75"
 			(at 0 1.17 90)
 			(layer "F.Fab")
 			(uuid "6ade9e15-7d0a-412b-8267-6403cd7ab94a")
@@ -29034,7 +28842,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7k"
+		(property "Value" "10k"
 			(at 0 1.17 90)
 			(layer "F.Fab")
 			(uuid "0321e8d1-4d34-4cc3-8552-f0bb969ec4a9")
@@ -31807,7 +31615,7 @@
 				)
 			)
 		)
-		(property "Value" "49.9"
+		(property "Value" "75"
 			(at 0 1.17 0)
 			(layer "F.Fab")
 			(uuid "739b43e3-ada9-47bb-a4c1-df2a079f0d78")
@@ -32224,14 +32032,14 @@
 	(footprint "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm"
 		(layer "F.Cu")
 		(uuid "a1af0193-2fdb-40d5-9e6e-03a9427fe5b9")
-		(at 82.6 84 90)
+		(at 82.6 81 90)
 		(descr "THT pad as test Point, diameter 2.0mm, hole diameter 1.0mm")
 		(tags "test point THT pad")
 		(property "Reference" "TP39"
 			(at 0 -1.998 90)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "19a83ab9-ed87-40e0-a9b2-a0ad33107492")
+			(uuid "142aad41-fc8b-439f-b174-7bcc26945ec2")
 			(effects
 				(font
 					(size 1 1)
@@ -32242,7 +32050,7 @@
 		(property "Value" "TestPoint"
 			(at 0 2.05 90)
 			(layer "F.Fab")
-			(uuid "b42702f5-85c8-4cab-9836-d6e429213224")
+			(uuid "0718374c-2165-4617-a3ca-b881768fac6b")
 			(effects
 				(font
 					(size 1 1)
@@ -32255,7 +32063,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "42f7f69e-7a5c-428a-ac93-5503be44744f")
+			(uuid "1a333046-cfe1-4d47-a7a5-0ef5860edede")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32268,7 +32076,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "3e3bfe8a-9962-45bb-9cd6-fcf6caa30fbd")
+			(uuid "c7a2fcd2-d920-49ac-a502-4dd5ddfa7ead")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32442,7 +32250,7 @@
 				)
 			)
 		)
-		(property "Value" "49.9"
+		(property "Value" "75"
 			(at 0 1.17 0)
 			(layer "F.Fab")
 			(uuid "fc8c5d10-28db-4a97-ae33-1680021832aa")
@@ -33774,7 +33582,7 @@
 				)
 			)
 		)
-		(property "Value" "49.9"
+		(property "Value" "75"
 			(at 0 1.17 90)
 			(layer "F.Fab")
 			(uuid "74a3f652-1c74-458d-9006-0875e153f18f")
@@ -34413,7 +34221,7 @@
 				)
 			)
 		)
-		(property "Value" "49.9"
+		(property "Value" "75"
 			(at 0 1.17 0)
 			(layer "F.Fab")
 			(uuid "d0535256-c046-4aed-98d3-bfd03167bcf1")
@@ -40178,7 +39986,7 @@
 			(at 0 -1.648 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "7a9305c2-ae74-4f01-97ba-0a8d8b9079fc")
+			(uuid "722c3e97-e620-411e-b5a8-d1954b3fffaa")
 			(effects
 				(font
 					(size 1 1)
@@ -40189,7 +39997,7 @@
 		(property "Value" "TestPoint"
 			(at 0 1.75 0)
 			(layer "F.Fab")
-			(uuid "fbd679c0-68c5-4e1e-8753-76099e40dc70")
+			(uuid "5f3c4533-5490-46d7-bbdd-be995f3db281")
 			(effects
 				(font
 					(size 1 1)
@@ -40202,7 +40010,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "51ed4809-ed44-4ed9-b5ed-7c6a10b150b6")
+			(uuid "63dd1752-b37a-48d3-a85e-08592ee77b22")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40215,7 +40023,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "854ce6ea-ef93-405b-acf2-1113e7103f54")
+			(uuid "53f34dd8-8699-4106-b7e4-95777e6d4793")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -42756,14 +42564,14 @@
 	(footprint "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm"
 		(layer "F.Cu")
 		(uuid "d7f4aec1-880f-4ae7-b6e2-faa14aa3623a")
-		(at 79.1 84 90)
+		(at 79.1 81 90)
 		(descr "THT pad as test Point, diameter 2.0mm, hole diameter 1.0mm")
 		(tags "test point THT pad")
 		(property "Reference" "TP40"
 			(at 0 -1.998 90)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "9a98e616-2169-4364-b847-d5f871caf229")
+			(uuid "0711b7fc-052e-4c55-9a26-2a6ecd506089")
 			(effects
 				(font
 					(size 1 1)
@@ -42774,7 +42582,7 @@
 		(property "Value" "TestPoint"
 			(at 0 2.05 90)
 			(layer "F.Fab")
-			(uuid "7bc30fb7-1b72-4181-8b80-559480874115")
+			(uuid "0f0d8ee7-5322-4792-a113-a065a6dcaab5")
 			(effects
 				(font
 					(size 1 1)
@@ -42787,7 +42595,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "3c739361-7c00-44e4-8db7-c59e2fbbb298")
+			(uuid "671a2191-5c57-4644-b579-ffa056973e6f")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -42800,7 +42608,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "dcdf92dd-50d3-48d7-82e1-bce6b40f08ac")
+			(uuid "baf78e89-bba0-4b3a-b2e9-c2892ae98ca0")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -43093,14 +42901,14 @@
 	(footprint "TestPoint:TestPoint_Pad_D3.0mm"
 		(layer "F.Cu")
 		(uuid "da5070e4-fb1b-4172-8bda-831e330b63db")
-		(at 91.6 89.8)
+		(at 91.6 86.8)
 		(descr "SMD pad as test Point, diameter 3.0mm")
 		(tags "test point SMD pad")
 		(property "Reference" "TP42"
 			(at 0 -2.398 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "9773f54d-70ff-4789-93ce-61429f302be7")
+			(uuid "59526652-b6ea-4e67-95d6-6c0a7d341ff6")
 			(effects
 				(font
 					(size 1 1)
@@ -43111,7 +42919,7 @@
 		(property "Value" "TestPoint"
 			(at 0 2.55 0)
 			(layer "F.Fab")
-			(uuid "ede8488c-686d-4240-a3e1-6f74391ec76f")
+			(uuid "7e8ea15b-aef7-494d-af9b-c6d54828ce29")
 			(effects
 				(font
 					(size 1 1)
@@ -43124,7 +42932,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "246b80f3-a651-479e-8910-d58ad6775db3")
+			(uuid "0b80a57a-f9ff-47f8-a6d4-e1b5a337fe65")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -43137,7 +42945,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "fe3e82af-c04e-4aea-a086-499ad8cfee49")
+			(uuid "1c6d66e0-530b-4ab1-83a8-0243e5affba8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -44118,7 +43926,7 @@
 				)
 			)
 		)
-		(property "Value" "49.9"
+		(property "Value" "75"
 			(at 0 1.17 0)
 			(layer "F.Fab")
 			(uuid "8ec1bcd1-6e7b-40ec-aec6-46a648cf27cc")
@@ -44550,7 +44358,7 @@
 				)
 			)
 		)
-		(property "Value" "2.2 uF"
+		(property "Value" "1 uF"
 			(at 0 1.16 0)
 			(layer "F.Fab")
 			(uuid "337cf9c2-10c0-4b91-9625-882e99314678")
@@ -45073,7 +44881,7 @@
 				)
 			)
 		)
-		(property "Value" "2.2 uF"
+		(property "Value" "1 uF"
 			(at 0 1.16 0)
 			(layer "F.Fab")
 			(uuid "f5b2dd05-1d47-4b30-bec9-384faa2df499")
@@ -47156,14 +46964,14 @@
 	(footprint "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm"
 		(layer "F.Cu")
 		(uuid "e9b7fb3f-1245-4b03-bc75-d43e8b8d1987")
-		(at 89.6 84 90)
+		(at 89.6 81 90)
 		(descr "THT pad as test Point, diameter 2.0mm, hole diameter 1.0mm")
 		(tags "test point THT pad")
 		(property "Reference" "TP37"
 			(at 0 -1.998 90)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "d7d81184-1454-43c0-8291-a2b13682b51d")
+			(uuid "4927933a-590f-4167-840f-4e35984f7ad5")
 			(effects
 				(font
 					(size 1 1)
@@ -47174,7 +46982,7 @@
 		(property "Value" "TestPoint"
 			(at 0 2.05 90)
 			(layer "F.Fab")
-			(uuid "741ff4ca-0693-451c-a9b2-ed2b19dc1a7d")
+			(uuid "16c2f415-cf0f-4b58-b646-d12248377971")
 			(effects
 				(font
 					(size 1 1)
@@ -47187,7 +46995,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "0698b76a-4078-4e09-b441-f116b2f558a6")
+			(uuid "9c3d6f3d-542e-45a2-8f97-d92136096d50")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -47200,7 +47008,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "becfdee3-bc0a-45ea-a8f8-daabade5055e")
+			(uuid "92756f58-6bd0-4b62-9d40-43c31aec6865")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -48150,14 +47958,14 @@
 	(footprint "TestPoint:TestPoint_Pad_D3.0mm"
 		(layer "F.Cu")
 		(uuid "ee28b282-d0b1-4e66-b5cf-dafbb4e812d8")
-		(at 97.1 89.8)
+		(at 97.1 86.8)
 		(descr "SMD pad as test Point, diameter 3.0mm")
 		(tags "test point SMD pad")
 		(property "Reference" "TP41"
 			(at 0 -2.398 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "ef29ba0e-13fd-41a4-b541-e4f751f5f82a")
+			(uuid "bf24d4b4-181e-41e4-8eec-2bdd2d19d6de")
 			(effects
 				(font
 					(size 1 1)
@@ -48168,7 +47976,7 @@
 		(property "Value" "TestPoint"
 			(at 0 2.55 0)
 			(layer "F.Fab")
-			(uuid "bef4fd72-6572-4ec8-b978-e708ffa878e5")
+			(uuid "add2f31a-554f-4dc4-b50f-d337180e112b")
 			(effects
 				(font
 					(size 1 1)
@@ -48181,7 +47989,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "20e3bb8f-ff86-4edb-a18b-3b24c6e642c2")
+			(uuid "ef7fd9a4-84e2-4cb6-828f-8b9f3a4c0880")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -48194,7 +48002,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "9ffb0617-472b-44e8-bfef-d6b2ea8af241")
+			(uuid "74aed1a5-604b-453a-83da-56e4a82daf7a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -50054,14 +49862,14 @@
 	(footprint "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm"
 		(layer "F.Cu")
 		(uuid "f697c7ad-d3ea-49ec-8302-6c4753d342c4")
-		(at 93.1 84 90)
+		(at 93.1 81 90)
 		(descr "THT pad as test Point, diameter 2.0mm, hole diameter 1.0mm")
 		(tags "test point THT pad")
 		(property "Reference" "TP36"
 			(at 0 -1.998 90)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "9272b115-7903-44e5-a0d5-3f5b29596f26")
+			(uuid "7ff6e111-998f-478c-a312-233adf5faf94")
 			(effects
 				(font
 					(size 1 1)
@@ -50072,7 +49880,7 @@
 		(property "Value" "TestPoint"
 			(at 0 2.05 90)
 			(layer "F.Fab")
-			(uuid "23a64f3d-4f01-47f9-a7f0-05ede214ebff")
+			(uuid "639cd80d-e802-484d-9360-0c39036112c9")
 			(effects
 				(font
 					(size 1 1)
@@ -50085,7 +49893,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "9d2a00cf-c8cb-430f-8b59-aa2c77c42ad3")
+			(uuid "dcdceeaf-66a3-4370-ade5-a746be65d457")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -50098,7 +49906,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "655d1eb3-8ef6-424d-8823-cb2c84de03d8")
+			(uuid "f1b5e1fb-03fe-4fc7-bb4f-a7164007e576")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51045,102 +50853,6 @@
 			)
 		)
 	)
-	(footprint "kikit:Board"
-		(layer "F.Cu")
-		(uuid "fcd483f8-727e-4ceb-950b-b500b3344618")
-		(at 86.1 81.8)
-		(descr "Mark board for extraction")
-		(property "Reference" "swd"
-			(at -4.5 -5 0)
-			(layer "Dwgs.User")
-			(uuid "acc6eeed-72f4-46c9-930d-8b8d2c41172e")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Board"
-			(at -7.25 -5 0)
-			(layer "Dwgs.User")
-			(uuid "6f17e96e-5dd4-45d3-a78e-1fafb4f55d6d")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 0 0 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "ff6f0b54-1360-4d6f-8966-48d093fd8e7d")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 0 0 0)
-			(layer "F.Fab")
-			(hide yes)
-			(uuid "26e399a6-f535-44b2-81e9-599fe2042a80")
-			(effects
-				(font
-					(size 1.27 1.27)
-					(thickness 0.15)
-				)
-			)
-		)
-		(attr board_only exclude_from_pos_files exclude_from_bom allow_missing_courtyard)
-		(duplicate_pad_numbers_are_jumpers no)
-		(fp_line
-			(start -1.25 -4)
-			(end -9.25 -4)
-			(stroke
-				(width 0.2)
-				(type solid)
-			)
-			(layer "Dwgs.User")
-			(uuid "047b0ff1-6f65-43e2-ac3f-44f909bddb27")
-		)
-		(fp_line
-			(start 0 0)
-			(end -1.25 -4)
-			(stroke
-				(width 0.2)
-				(type solid)
-			)
-			(layer "Dwgs.User")
-			(uuid "7eaf88f0-cf13-467c-ba5f-768c5e1f291a")
-		)
-		(fp_line
-			(start 0 0)
-			(end -1 -0.5)
-			(stroke
-				(width 0.2)
-				(type solid)
-			)
-			(layer "Dwgs.User")
-			(uuid "35e0002c-d5d6-42c5-b8b9-ae353b1fca46")
-		)
-		(fp_line
-			(start 0 0)
-			(end 0.5 -1)
-			(stroke
-				(width 0.2)
-				(type solid)
-			)
-			(layer "Dwgs.User")
-			(uuid "f634599e-0d49-429b-90b2-747337f390b7")
-		)
-		(embedded_fonts no)
-	)
 	(footprint "Resistor_SMD:R_0402_1005Metric"
 		(layer "F.Cu")
 		(uuid "fcfcb32c-fb18-4824-a514-87817f5b97f4")
@@ -51159,7 +50871,7 @@
 				)
 			)
 		)
-		(property "Value" "49.9"
+		(property "Value" "75"
 			(at 0 1.17 0)
 			(layer "F.Fab")
 			(uuid "7df21a42-2e55-4cd1-9d29-1b3abc36db7b")
@@ -51591,7 +51303,7 @@
 				)
 			)
 		)
-		(property "Value" "49.9"
+		(property "Value" "75"
 			(at 0 1.17 90)
 			(layer "F.Fab")
 			(uuid "e839df9e-5868-4819-91e4-5f1be7abeca1")
@@ -53187,8 +52899,8 @@
 		(uuid "ac217ce5-901f-41f2-acd0-712e2ef5b319")
 	)
 	(gr_rect
-		(start 72.1 81.8)
-		(end 100.1 92.6)
+		(start 72.1 78.8)
+		(end 100.1 89.6)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -53269,7 +52981,7 @@
 		)
 	)
 	(gr_text "DIO"
-		(at 75.1 87.7 0)
+		(at 75.1 84.7 0)
 		(layer "F.SilkS")
 		(uuid "0285073d-077a-48ab-9e2e-12fde60487e0")
 		(effects
@@ -53281,7 +52993,7 @@
 		)
 	)
 	(gr_text "CLK"
-		(at 80.6 87.7 0)
+		(at 80.6 84.7 0)
 		(layer "F.SilkS")
 		(uuid "88793d9c-64cd-4d68-89c0-61f7ca5e5f03")
 		(effects
@@ -53293,7 +53005,7 @@
 		)
 	)
 	(gr_text "RST"
-		(at 86.1 87.7 0)
+		(at 86.1 84.7 0)
 		(layer "F.SilkS")
 		(uuid "a30f4ce5-cba3-4362-8b4a-c8ac63de90ab")
 		(effects
@@ -53305,7 +53017,7 @@
 		)
 	)
 	(gr_text "GND"
-		(at 91.6 87.7 0)
+		(at 91.6 84.7 0)
 		(layer "F.SilkS")
 		(uuid "f0614b18-d36f-4e97-9a36-97ea61a84c74")
 		(effects
@@ -53317,7 +53029,7 @@
 		)
 	)
 	(gr_text "3V3"
-		(at 97.1 87.7 0)
+		(at 97.1 84.7 0)
 		(layer "F.SilkS")
 		(uuid "5f380924-1ab9-4eaf-b98b-230eb412ca14")
 		(effects
@@ -53693,8 +53405,8 @@
 		(uuid "92c988a2-9fef-4e24-8246-98c82fa08c3b")
 	)
 	(segment
-		(start 91.6 86)
-		(end 91.6 89.8)
+		(start 91.6 83)
+		(end 91.6 86.8)
 		(width 0.2)
 		(layer "F.Cu")
 		(net "GND")
@@ -53749,8 +53461,8 @@
 		(uuid "c700c443-b2d8-43a7-9b68-cf7f43baf61e")
 	)
 	(segment
-		(start 89.6 84)
-		(end 91.6 86)
+		(start 89.6 81)
+		(end 91.6 83)
 		(width 0.2)
 		(layer "F.Cu")
 		(net "GND")
@@ -54479,8 +54191,8 @@
 		(uuid "446640fa-6e99-454b-a427-b811e6c05867")
 	)
 	(segment
-		(start 97.1 88)
-		(end 97.1 89.8)
+		(start 97.1 85)
+		(end 97.1 86.8)
 		(width 0.2)
 		(layer "F.Cu")
 		(net "+3V3")
@@ -54503,8 +54215,8 @@
 		(uuid "65089bea-a1c0-4f40-b8f6-953f63d869df")
 	)
 	(segment
-		(start 93.1 84)
-		(end 97.1 88)
+		(start 93.1 81)
+		(end 97.1 85)
 		(width 0.2)
 		(layer "F.Cu")
 		(net "+3V3")
@@ -61483,8 +61195,8 @@
 		(uuid "4362e5fe-3102-44be-8b8f-d6504d0ea57f")
 	)
 	(segment
-		(start 86.1 84)
-		(end 86.1 89.8)
+		(start 86.1 81)
+		(end 86.1 86.8)
 		(width 0.2)
 		(layer "F.Cu")
 		(net "/RESET")
@@ -64091,8 +63803,8 @@
 		(uuid "1a176ad2-e044-4dda-a3a1-1ec449f4f4b8")
 	)
 	(segment
-		(start 82.6 84)
-		(end 80.6 86)
+		(start 82.6 81)
+		(end 80.6 83)
 		(width 0.2)
 		(layer "F.Cu")
 		(net "/SWCLK")
@@ -64131,8 +63843,8 @@
 		(uuid "9ebeca02-17f2-4e60-abd3-b0677ac165d9")
 	)
 	(segment
-		(start 80.6 86)
-		(end 80.6 89.8)
+		(start 80.6 83)
+		(end 80.6 86.8)
 		(width 0.2)
 		(layer "F.Cu")
 		(net "/SWCLK")
@@ -64767,16 +64479,16 @@
 		(uuid "b92c93f6-279b-4f1b-b13c-a76427058abe")
 	)
 	(segment
-		(start 79.1 84)
-		(end 75.1 88)
+		(start 79.1 81)
+		(end 75.1 85)
 		(width 0.2)
 		(layer "F.Cu")
 		(net "/SWDIO")
 		(uuid "bb2e3e9f-bf95-4db9-88fe-03ba9b54954d")
 	)
 	(segment
-		(start 75.1 88)
-		(end 75.1 89.8)
+		(start 75.1 85)
+		(end 75.1 86.8)
 		(width 0.2)
 		(layer "F.Cu")
 		(net "/SWDIO")

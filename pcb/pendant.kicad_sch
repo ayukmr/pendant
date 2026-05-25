@@ -23934,7 +23934,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7k"
+		(property "Value" "10k"
 			(at 139.7 57.15 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25397,7 +25397,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7k"
+		(property "Value" "10k"
 			(at 139.7 54.61 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27348,7 +27348,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2 uF"
+		(property "Value" "1 uF"
 			(at 170.18 92.7099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -31645,7 +31645,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "2.2 uF"
+		(property "Value" "1 uF"
 			(at 154.94 92.7099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32093,7 +32093,7 @@
 				)
 			)
 		)
-		(property "Value" "15k"
+		(property "Value" "75k"
 			(at 52.07 120.65 90)
 			(show_name no)
 			(do_not_autoplace no)
