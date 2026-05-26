@@ -10,6 +10,6 @@ J2,1,USB_B_Micro,Project:MICRO-USB-SMD_47346-0001,~,C132560
 "R18,R19,R22,R23",4,10k Ω,Resistor_SMD:R_0402_1005Metric,~,C25744
 R21,1,75k Ω,Resistor_SMD:R_0402_1005Metric,~,C25798
 U1,1,ATSAMD21G18A-A,Package_QFP:TQFP-48_7x7mm_P0.5mm,http://ww1.microchip.com/downloads/en/DeviceDoc/SAM_D21_DA1_Family_Data%20Sheet_DS40001882E.pdf,C619067
-U2,1,LSM6DS3,Package_LGA:LGA-14_3x2.5mm_P0.5mm_LayoutBorder3x4y,https://www.st.com/resource/en/datasheet/lsm6ds3tr-c.pdf,C784817
+U2,1,LIS3DH,Package_LGA:LGA-16_3x3mm_P0.5mm_LayoutBorder3x5y,https://www.st.com/resource/en/datasheet/cd00274221.pdf,LIS3DHTR
 U3,1,XC6206PxxxMR,Package_TO_SOT_SMD:SOT-23-3,https://www.torexsemi.com/file/xc6206/XC6206.pdf,C5446
 U4,1,TP4057,Package_TO_SOT_SMD:TSOT-23-6,http://toppwr.com/uploadfile/file/20230304/640302a47b738.pdf,C12044
