@@ -1,11 +1,11 @@
 .DS_Store
 
-/pcb/*.lck
-/pcb/*.drl
-/pcb/*.gbr
-/pcb/*.gbrjob
-/pcb/*.kicad_prl
-/pcb/*-backups
-/pcb/*.bak
-/pcb/.history
-/pcb/fp-info-cache
+*.lck
+*.drl
+*.gbr
+*.gbrjob
+*.kicad_prl
+*-backups
+*.bak
+.history
+fp-info-cache

@@ -533,7 +533,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "pendant.kicad_pro",
+    "filename": "front.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -724,8 +724,8 @@
     "subpart_id_separator": 0,
     "top_level_sheets": [
       {
-        "filename": "pendant.kicad_sch",
-        "name": "pendant",
+        "filename": "front.kicad_sch",
+        "name": "front",
         "uuid": "62c20ad6-bce3-440f-b210-d05bb0a711e0"
       }
     ],
@@ -735,7 +735,7 @@
   "sheets": [
     [
       "62c20ad6-bce3-440f-b210-d05bb0a711e0",
-      "pendant"
+      "front"
     ]
   ],
   "text_variables": {},
