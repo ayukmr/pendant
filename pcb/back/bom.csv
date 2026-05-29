@@ -7,7 +7,8 @@ J1,1,Conn_01x02,Connector_JST:JST_SH_SM02B-SRSS-TB_1x02-1MP_P1.00mm_Horizontal,~
 J2,1,USB_B_Micro,Project:MICRO-USB-SMD_47346-0001,~,C132560
 "R1,R2,R3,R4,R5,R6,R7,R8,R9,R10,R11,R12,R13,R14,R15",15,75 Ω,Resistor_SMD:R_0402_1005Metric,~,C25133
 "R16,R17",2,22 Ω,Resistor_SMD:R_0402_1005Metric,~,C25092
-"R18,R19,R22,R23",4,10k Ω,Resistor_SMD:R_0402_1005Metric,~,C25744
+"R18,R19",2,2k Ω,Resistor_SMD:R_0402_1005Metric,~,C4109
+"R22,R23",2,10k Ω,Resistor_SMD:R_0402_1005Metric,~,C25744
 R21,1,75k Ω,Resistor_SMD:R_0402_1005Metric,~,C25798
 U1,1,ATSAMD21G18A-A,Package_QFP:TQFP-48_7x7mm_P0.5mm,http://ww1.microchip.com/downloads/en/DeviceDoc/SAM_D21_DA1_Family_Data%20Sheet_DS40001882E.pdf,C619067
 U2,1,LIS3DH,Package_LGA:LGA-16_3x3mm_P0.5mm_LayoutBorder3x5y,https://www.st.com/resource/en/datasheet/cd00274221.pdf,LIS3DHTR

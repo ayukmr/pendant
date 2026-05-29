@@ -7820,7 +7820,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "2k"
 			(at 176.53 64.7699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8340,8 +8340,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 182.88 60.96 0)
-		(mirror y)
+		(at 182.88 60.96 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8351,7 +8350,7 @@
 		(dnp no)
 		(uuid "67700291-5758-48ca-a92a-5aa1ad69aaad")
 		(property "Reference" "R18"
-			(at 185.42 62.2301 0)
+			(at 185.42 59.6899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8361,8 +8360,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "10k"
-			(at 185.42 59.6901 0)
+		(property "Value" "2k"
+			(at 185.42 62.2299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
