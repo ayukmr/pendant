@@ -13425,6 +13425,131 @@
 			)
 		)
 	)
+	(footprint "MountingHole:ToolingHole_1.152mm"
+		(layer "F.Cu")
+		(uuid "541a9b1d-5f16-4214-8106-b9c079b6dd91")
+		(at 159.985 89.525)
+		(descr "Tooling Hole 1.152mm, 1.3mm solder mask, JLCPCB specification, https://jlcpcb.com/help/article/How-to-add-tooling-holes-for-PCB-assembly-order")
+		(tags "mounting")
+		(property "Reference" "REF**"
+			(at 0 -1.5 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "98ed67a0-8047-40bf-b47d-c6254c723dfa")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "ToolingHole_1.152mm"
+			(at 0 1.6 0)
+			(layer "F.Fab")
+			(uuid "b6d30b1d-0a7b-45e0-b8fb-583bad11be78")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2a747c05-f226-4163-938a-c482b987af76")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5d70b80a-203a-41ca-8fa1-a314ff183c81")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(attr exclude_from_pos_files exclude_from_bom)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_circle
+			(center 0 0)
+			(end 0.7 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "ee0ff89f-9e12-4acc-9df7-19a98a0270d1")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "412c1a70-b570-4b54-b362-fe48ea9357c9")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "" np_thru_hole circle
+			(at 0 0)
+			(size 1.152 1.152)
+			(drill 1.152)
+			(layers "*.Cu" "*.Mask")
+			(solder_mask_margin 0.074)
+			(uuid "2facb4b7-be18-4688-be80-5bcadcb92961")
+		)
+		(zone
+			(layers "F.Cu" "B.Cu" "In1.Cu" "In2.Cu")
+			(uuid "cb49d358-64f1-40bd-98ad-e22e3327f572")
+			(hatch edge 0.5)
+			(connect_pads
+				(clearance 0)
+			)
+			(min_thickness 0.25)
+			(keepout
+				(tracks not_allowed)
+				(vias allowed)
+				(pads allowed)
+				(copperpour not_allowed)
+				(footprints not_allowed)
+			)
+			(placement
+				(enabled no)
+				(sheetname "")
+			)
+			(fill
+				(thermal_gap 0.5)
+				(thermal_bridge_width 0.5)
+				(island_removal_mode 0)
+			)
+			(polygon
+				(pts
+					(xy 160.685 89.525) (xy 160.664659 89.357479) (xy 160.604819 89.199694) (xy 160.508958 89.060814)
+					(xy 160.382645 88.948911) (xy 160.233223 88.870489) (xy 160.069376 88.830104) (xy 159.900624 88.830104)
+					(xy 159.736777 88.870489) (xy 159.587355 88.948911) (xy 159.461042 89.060814) (xy 159.365181 89.199694)
+					(xy 159.305341 89.357479) (xy 159.285 89.525) (xy 159.305341 89.692521) (xy 159.365181 89.850306)
+					(xy 159.461042 89.989186) (xy 159.587355 90.101089) (xy 159.736777 90.179511) (xy 159.900624 90.219896)
+					(xy 160.069376 90.219896) (xy 160.233223 90.179511) (xy 160.382645 90.101089) (xy 160.508958 89.989186)
+					(xy 160.604819 89.850306) (xy 160.664659 89.692521)
+				)
+			)
+		)
+		(embedded_fonts no)
+	)
 	(footprint "Project:LED_0402_1005Metric"
 		(layer "F.Cu")
 		(uuid "5b27e6f3-fee0-4671-a93e-f229ceb4f11b")
@@ -21749,6 +21874,131 @@
 				(xyz 0 0 0)
 			)
 		)
+	)
+	(footprint "MountingHole:ToolingHole_1.152mm"
+		(layer "F.Cu")
+		(uuid "8cff44f1-aae1-40f3-929a-0d352a330f3b")
+		(at 135.885 89.525)
+		(descr "Tooling Hole 1.152mm, 1.3mm solder mask, JLCPCB specification, https://jlcpcb.com/help/article/How-to-add-tooling-holes-for-PCB-assembly-order")
+		(tags "mounting")
+		(property "Reference" "REF**"
+			(at 0 -1.5 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "483ec4db-3460-4b18-9063-5b02b9eb73ca")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "ToolingHole_1.152mm"
+			(at 0 1.6 0)
+			(layer "F.Fab")
+			(uuid "0cda947d-c719-446c-8b6c-81af7472c4e8")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8c445ca1-524e-4b9b-a5d9-7a0fc67120ca")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9c2db2a4-6cf0-453e-be01-4b39bcae0d69")
+			(effects
+				(font
+					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(attr exclude_from_pos_files exclude_from_bom)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_circle
+			(center 0 0)
+			(end 0.7 0)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(fill no)
+			(layer "F.CrtYd")
+			(uuid "b342c1d8-044a-47ca-a688-f984cbc71abb")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(uuid "4ef9350a-21cc-4744-b154-f07c9a55f036")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "" np_thru_hole circle
+			(at 0 0)
+			(size 1.152 1.152)
+			(drill 1.152)
+			(layers "*.Cu" "*.Mask")
+			(solder_mask_margin 0.074)
+			(uuid "74598fa1-36c3-4c98-ab03-26939a3afbf8")
+		)
+		(zone
+			(layers "F.Cu" "B.Cu" "In1.Cu" "In2.Cu")
+			(uuid "275b231f-8d24-4b7c-aec0-2bd85bf04e3b")
+			(hatch edge 0.5)
+			(connect_pads
+				(clearance 0)
+			)
+			(min_thickness 0.25)
+			(keepout
+				(tracks not_allowed)
+				(vias allowed)
+				(pads allowed)
+				(copperpour not_allowed)
+				(footprints not_allowed)
+			)
+			(placement
+				(enabled no)
+				(sheetname "")
+			)
+			(fill
+				(thermal_gap 0.5)
+				(thermal_bridge_width 0.5)
+				(island_removal_mode 0)
+			)
+			(polygon
+				(pts
+					(xy 136.585 89.525) (xy 136.564659 89.357479) (xy 136.504819 89.199694) (xy 136.408958 89.060814)
+					(xy 136.282645 88.948911) (xy 136.133223 88.870489) (xy 135.969376 88.830104) (xy 135.800624 88.830104)
+					(xy 135.636777 88.870489) (xy 135.487355 88.948911) (xy 135.361042 89.060814) (xy 135.265181 89.199694)
+					(xy 135.205341 89.357479) (xy 135.185 89.525) (xy 135.205341 89.692521) (xy 135.265181 89.850306)
+					(xy 135.361042 89.989186) (xy 135.487355 90.101089) (xy 135.636777 90.179511) (xy 135.800624 90.219896)
+					(xy 135.969376 90.219896) (xy 136.133223 90.179511) (xy 136.282645 90.101089) (xy 136.408958 89.989186)
+					(xy 136.504819 89.850306) (xy 136.564659 89.692521)
+				)
+			)
+		)
+		(embedded_fonts no)
 	)
 	(footprint "Project:LED_0402_1005Metric"
 		(layer "F.Cu")
