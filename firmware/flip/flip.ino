@@ -439,22 +439,34 @@ AI void off(int lo, int hi) {
 Grid grid;
 
 const int CPL_Y = 0;
-const int CPL_PAIR  = 3;
+const int CPL_PAIR = 3;
 const int CPL_WORKS = 1;
+
+const uint16_t* img = NULL;
 
 bool wanted(int x, int y, int dir) {
     int rw = pairs[y].size() * 2;
     int rox = (14 - rw) / 2;
-    int gy = y + 1;
 
-    if (x == CPL_PAIR && y == CPL_Y) {
-        if (dir != CPL_WORKS) return false;
-        int gx = x * 2 + rox + 1;
-        return grid.cells[gx + gy * SIZE].fluid || grid.cells[gx + 1 + gy * SIZE].fluid;
+    int gx = x * 2 + rox;
+    int gy = y;
+
+    if (img) {
+        if (x == CPL_PAIR && y == CPL_Y) {
+            return false;
+        } else {
+            return (img[gy] & (1u << (13 - gx - dir))) != 0;
+        }
     } else {
-      int gx = x * 2 + dir + rox + 1;
-      return grid.cells[gx + gy * SIZE].fluid;
-  }
+        gx++; gy++;
+
+        if (x == CPL_PAIR && y == CPL_Y) {
+            if (dir != CPL_WORKS) return false;
+            return grid.cells[gx + gy * SIZE].fluid || grid.cells[gx + 1 + gy * SIZE].fluid;
+        } else {
+            return grid.cells[gx + dir + gy * SIZE].fluid;
+        }
+    }
 }
 
 // == timer ==
@@ -530,6 +542,59 @@ void timer_init(uint16_t us) {
     while (TC4->COUNT16.STATUS.bit.SYNCBUSY);
 }
 
+// == images ==
+
+const uint16_t IMG_DISCN[14] = {
+    0b00000000000000,
+    0b00000000000000,
+    0b00000100100000,
+    0b00000100100000,
+    0b00001111110000,
+    0b00001111110000,
+    0b00001111110000,
+    0b00001111110000,
+    0b00000111100000,
+    0b00000011000000,
+    0b00000011000000,
+    0b00000011000000,
+    0b00000011000000,
+    0b00000000000000
+};
+const uint16_t IMG_CHRG[14] = {
+    0b00000000000000,
+    0b00000000000000,
+    0b00000111111000,
+    0b00000111111000,
+    0b00001111110000,
+    0b00001111100000,
+    0b00011111111000,
+    0b00011111111000,
+    0b00000011110000,
+    0b00000111100000,
+    0b00000111000000,
+    0b00001110000000,
+    0b00001100000000,
+    0b00000000000000
+};
+const uint16_t IMG_STDBY[14] = {
+    0b00000000000000,
+    0b00000000000000,
+    0b00001111110000,
+    0b00011100111000,
+    0b00011111111000,
+    0b00011100011000,
+    0b00011000111000,
+    0b00011100011000,
+    0b00011100111000,
+    0b00011001111000,
+    0b00011011111000,
+    0b00011111111000,
+    0b00001111110000,
+    0b00000000000000
+};
+
+const uint16_t* STATES[] = {IMG_DISCN, IMG_CHRG, IMG_STDBY};
+
 // == accel ==
 
 #define PA PORT->Group[0]
@@ -576,6 +641,49 @@ uint8_t i2c_read(bool last) {
 }
 
 const uint8_t ACC_ADDR = 0x18;
+const uint8_t ACC_WRITE = ACC_ADDR << 1;
+const uint8_t ACC_READ = (ACC_ADDR << 1) | 1;
+const uint8_t LIS3DH_ID = 0x33;
+const uint8_t ACCEL_INT_PIN = 19;
+
+void acc_reg(uint8_t reg, uint8_t v) {
+    i2c_start(); i2c_write(ACC_WRITE); i2c_write(reg); i2c_write(v); i2c_stop();
+}
+
+void accel_int() {
+    // 95/127*2g -> ~1.5g
+    acc_reg(0x32, 0x5f);
+    // 100ms persistence
+    acc_reg(0x33, 0x0a);
+    // connect to int pin
+    acc_reg(0x22, 0x40);
+    // latch pin until read
+    acc_reg(0x24, 0x08);
+    // any axis exceeds + arm
+    acc_reg(0x30, 0x2a);
+}
+
+bool accel_int_en() {
+    uint8_t v = 0;
+    i2c_start(); i2c_write(ACC_WRITE); i2c_write(0x31);
+    i2c_start(); i2c_write(ACC_READ); v = i2c_read(true); i2c_stop();
+    return (v & 0x40) != 0;
+}
+
+uint32_t last_img = 0;
+
+void accel_isr() {
+    uint32_t in = PORT->Group[1].IN.reg;
+    bool chrg = (in & (1ul << 22)) == 0;
+    bool stdby = (in & (1ul << 23)) == 0;
+
+    uint8_t state = stdby ? 2 : (chrg ? 1 : 0);
+
+    last_img = millis();
+    img = STATES[state];
+
+    accel_int_en();
+}
 
 bool accel_init() {
     PA.PINCFG[SDA_BIT].reg = PORT_PINCFG_INEN;
@@ -583,21 +691,30 @@ bool accel_init() {
     sda_hi(); scl_hi(); tick();
     delay(10);
 
+    // read whoami
     uint8_t id = 0;
-    i2c_start(); i2c_write(ACC_ADDR << 1); i2c_write(0x0f | 0x80);
-    i2c_start(); i2c_write((ACC_ADDR << 1) | 1); id = i2c_read(true); i2c_stop();
-    if (id != 0x33) return false;
+    i2c_start(); i2c_write(ACC_WRITE); i2c_write(0x0f);
+    i2c_start(); i2c_write(ACC_READ); id = i2c_read(true); i2c_stop();
+    if (id != LIS3DH_ID) return false;
 
-    i2c_start(); i2c_write(ACC_ADDR << 1); i2c_write(0x20); i2c_write(0x57); i2c_stop();
-    i2c_start(); i2c_write(ACC_ADDR << 1); i2c_write(0x23); i2c_write(0x88); i2c_stop();
+    // 100 hz, low power off, three axes
+    acc_reg(0x20, 0x57);
+    // block data update, +-2g full scale, high res mode
+    acc_reg(0x23, 0x88);
+
+    accel_int();
+    accel_int_en();
+
+    pinMode(ACCEL_INT_PIN, INPUT);
+    attachInterrupt(digitalPinToInterrupt(ACCEL_INT_PIN), accel_isr, RISING);
 
     return true;
 }
 
 V2 accel_gravity() {
     uint8_t b[6];
-    i2c_start(); i2c_write(ACC_ADDR << 1); i2c_write(0x28 | 0x80);
-    i2c_start(); i2c_write((ACC_ADDR << 1) | 1);
+    i2c_start(); i2c_write(ACC_WRITE); i2c_write(0x28 | 0x80);
+    i2c_start(); i2c_write(ACC_READ);
     for (uint8_t i = 0; i < 6; i++) b[i] = i2c_read(i == 5);
     i2c_stop();
 
@@ -620,6 +737,15 @@ void setup() {
         PORT->Group[p.first].PINCFG[p.second].bit.PMUXEN = 0;
         PORT->Group[p.first].DIRCLR.reg = 1ul << p.second;
     }
+
+    // charging
+    PORT->Group[1].PINCFG[22].reg = 0;
+    PORT->Group[1].PINCFG[22].bit.INEN = 1;
+    PORT->Group[1].DIRCLR.reg = 1ul << 22;
+    // standby
+    PORT->Group[1].PINCFG[23].reg = 0;
+    PORT->Group[1].PINCFG[23].bit.INEN = 1;
+    PORT->Group[1].DIRCLR.reg = 1ul << 23;
 
     build_sched();
     timer_init(SLOT_US);
@@ -660,5 +786,9 @@ void loop() {
     if (LOG && millis() - last > 200) {
       last = millis();
       log_frame();
+    }
+
+    if (millis() - last_img > 2000) {
+        img = NULL;
     }
 }
