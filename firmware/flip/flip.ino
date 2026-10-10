@@ -17,7 +17,7 @@ typedef int32_t fx;
 #define FX(f) ((fx)((f) * 65536.0f))
 
 #define FX_INT(a)  ((a) >> 16)
-#define FX_FRAC(a) ((a) & 0xFFFF)
+#define FX_FRAC(a) ((a) & 0xffff)
 
 AI fx fmul(fx a, fx b) { return (fx)(((int64_t)a * b) >> 16); }
 AI fx fdiv(fx a, fx b) { return (fx)(((int64_t)a << 16) / b); }
@@ -532,7 +532,7 @@ void timer_init(uint16_t us) {
     while (TC4->COUNT16.CTRLA.bit.SWRST);
 
     TC4->COUNT16.CTRLA.reg = TC_CTRLA_MODE_COUNT16 | TC_CTRLA_WAVEGEN_MFRQ | TC_CTRLA_PRESCALER_DIV8;
-    TC4->COUNT16.CC[0].reg = 6 * us - 1;        // 48MHz / 8 = 6 ticks per us
+    TC4->COUNT16.CC[0].reg = 6 * us - 1;
     while (TC4->COUNT16.STATUS.bit.SYNCBUSY);
 
     TC4->COUNT16.INTENSET.bit.MC0 = 1;
@@ -671,18 +671,10 @@ bool accel_int_en() {
 }
 
 uint32_t last_img = 0;
+volatile bool accel_flag = false;
 
 void accel_isr() {
-    uint32_t in = PORT->Group[1].IN.reg;
-    bool chrg = (in & (1ul << 22)) == 0;
-    bool stdby = (in & (1ul << 23)) == 0;
-
-    uint8_t state = stdby ? 2 : (chrg ? 1 : 0);
-
-    last_img = millis();
-    img = STATES[state];
-
-    accel_int_en();
+    accel_flag = true;
 }
 
 bool accel_init() {
@@ -711,6 +703,9 @@ bool accel_init() {
     return true;
 }
 
+const float GRAVITY = 490.0f;
+const fx MG_TO_FX = FX(GRAVITY / 1000.0f);
+
 V2 accel_gravity() {
     uint8_t b[6];
     i2c_start(); i2c_write(ACC_WRITE); i2c_write(0x28 | 0x80);
@@ -721,10 +716,97 @@ V2 accel_gravity() {
     int16_t ax = (int16_t)((b[1] << 8) | b[0]) >> 4;
     int16_t ay = (int16_t)((b[3] << 8) | b[2]) >> 4;
 
-    return {(fx)(ay * 32113), (fx)(-ax * 32113)};
+    return {(fx)(ay * MG_TO_FX), (fx)(-ax * MG_TO_FX)};
 }
 
 bool have_accel = false;
+
+// == sleep ==
+
+const uint32_t SLEEP_TIMEOUT = 30000;
+const fx MOTION_TH = FX(25.0f); // 25/490 -> 0.05g
+
+uint32_t last_motion = 0;
+V2 last_g;
+
+void wake_setup() {
+    // configure gen 6 with low power clock
+    GCLK->GENCTRL.reg = GCLK_GENCTRL_ID(6) | GCLK_GENCTRL_SRC_OSCULP32K | GCLK_GENCTRL_GENEN | GCLK_GENCTRL_RUNSTDBY;
+    while (GCLK->STATUS.bit.SYNCBUSY);
+    // connect gen 6 with eic
+    GCLK->CLKCTRL.reg = GCLK_CLKCTRL_CLKEN | GCLK_CLKCTRL_GEN_GCLK6 | GCLK_CLKCTRL_ID_EIC;
+    while (GCLK->STATUS.bit.SYNCBUSY);
+
+    // allow accel int to wakeup
+    EIC->WAKEUP.reg |= 1ul << g_APinDescription[ACCEL_INT_PIN].ulExtInt;
+
+    // keep flash enabled in sleep
+    NVMCTRL->CTRLB.bit.SLEEPPRM = NVMCTRL_CTRLB_SLEEPPRM_DISABLED_Val;
+}
+
+void leds_off() {
+    for (auto& p : pins) PORT->Group[p.first].DIRCLR.reg = 1ul << p.second;
+}
+
+bool usb_connected() {
+    uint32_t in = PORT->Group[1].IN.reg;
+    bool chrg = (in & (1ul << 22)) == 0;
+    bool stdby = (in & (1ul << 23)) == 0;
+    return chrg || stdby;
+}
+
+void sleep() {
+    // if (usb_connected()) {
+    //     last_motion = millis();
+    //     return;
+    // }
+
+    // stop multiplexing
+    TC4->COUNT16.CTRLA.bit.ENABLE = 0;
+    while (TC4->COUNT16.STATUS.bit.SYNCBUSY);
+    leds_off();
+
+    // 10 hz low power mode
+    acc_reg(0x20, 0x2f);
+    // 100ms persistence
+    acc_reg(0x33, 0x01);
+
+    // disable int handlers
+    __disable_irq();
+    // reset accel int latch
+    accel_int_en();
+    // disable 1ms timer int
+    SysTick->CTRL &= ~SysTick_CTRL_TICKINT_Msk;
+
+    // enable deep standby
+    SCB->SCR |= SCB_SCR_SLEEPDEEP_Msk;
+    // force register writes
+    __DSB();
+
+    // sleep until int
+    __WFI();
+
+    // undo sleep settings
+    SCB->SCR &= ~SCB_SCR_SLEEPDEEP_Msk;
+    SysTick->CTRL |= SysTick_CTRL_TICKINT_Msk;
+
+    // enable int handlers
+    __enable_irq();
+    // run pending isrs
+    __ISB();
+    accel_flag = false;
+
+    // restore accel settings
+    acc_reg(0x20, 0x57);
+    acc_reg(0x33, 0x0a);
+    accel_int_en();
+
+    // start timer
+    TC4->COUNT16.CTRLA.bit.ENABLE = 1;
+    while (TC4->COUNT16.STATUS.bit.SYNCBUSY);
+
+    last_motion = millis();
+}
 
 // == entry ==
 
@@ -751,6 +833,11 @@ void setup() {
     timer_init(SLOT_US);
 
     have_accel = accel_init();
+
+    if (have_accel) {
+        wake_setup();
+        last_motion = millis();
+    }
 }
 
 void log_frame() {
@@ -777,8 +864,18 @@ void log_frame() {
 uint32_t last = 0;
 
 void loop() {
-    V2 g = {0, FX(-490.0f)};
-    if (have_accel) g = accel_gravity();
+    V2 g = {0, FX(-GRAVITY)};
+    if (have_accel) {
+        g = accel_gravity();
+
+        V2 d = g - last_g;
+        if (abs(d.x) > MOTION_TH || abs(d.y) > MOTION_TH) {
+            last_motion = millis();
+            last_g = g;
+        }
+
+        if (millis() - last_motion > SLEEP_TIMEOUT) sleep();
+    }
 
     grid.update(g);
     publish();
@@ -790,5 +887,20 @@ void loop() {
 
     if (millis() - last_img > 2000) {
         img = NULL;
+    }
+
+    if (accel_flag) {
+        accel_flag = false;
+
+        uint32_t in = PORT->Group[1].IN.reg;
+        bool chrg = (in & (1ul << 22)) == 0;
+        bool stdby = (in & (1ul << 23)) == 0;
+
+        uint8_t state = stdby ? 2 : (chrg ? 1 : 0);
+
+        last_img = millis();
+        img = STATES[state];
+
+        accel_int_en();
     }
 }
