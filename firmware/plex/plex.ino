@@ -29,8 +29,9 @@ std::array<std::vector<std::pair<int, int>>, 14> pairs = {{
 
 std::array<std::vector<bool>, 14> leds;
 
+const bool CPL = false;
 const int CPL_Y = 0;
-const int CPL_PAIR  = 3;
+const int CPL_PAIR = 3;
 const int CPL_WORKS = 1;
 
 const uint16_t SLOT_US = 50;
@@ -75,7 +76,7 @@ void clear() {
 }
 
 bool wanted(int x, int y, int dir) {
-    if (y == CPL_Y && x == CPL_PAIR) {
+    if (CPL && y == CPL_Y && x == CPL_PAIR) {
         if (dir != CPL_WORKS) return false;
         return leds[y][x * 2] || leds[y][x * 2 + 1];
     } else {

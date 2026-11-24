@@ -438,6 +438,7 @@ AI void off(int lo, int hi) {
 
 Grid grid;
 
+const bool CPL = false;
 const int CPL_Y = 0;
 const int CPL_PAIR = 3;
 const int CPL_WORKS = 1;
@@ -452,7 +453,7 @@ bool wanted(int x, int y, int dir) {
     int gy = y;
 
     if (img) {
-        if (x == CPL_PAIR && y == CPL_Y) {
+        if (CPL && x == CPL_PAIR && y == CPL_Y) {
             return false;
         } else {
             return (img[gy] & (1u << (13 - gx - dir))) != 0;
@@ -460,7 +461,7 @@ bool wanted(int x, int y, int dir) {
     } else {
         gx++; gy++;
 
-        if (x == CPL_PAIR && y == CPL_Y) {
+        if (CPL && x == CPL_PAIR && y == CPL_Y) {
             if (dir != CPL_WORKS) return false;
             return grid.cells[gx + gy * SIZE].fluid || grid.cells[gx + 1 + gy * SIZE].fluid;
         } else {
@@ -748,23 +749,16 @@ void leds_off() {
     for (auto& p : pins) PORT->Group[p.first].DIRCLR.reg = 1ul << p.second;
 }
 
-bool usb_connected() {
-    uint32_t in = PORT->Group[1].IN.reg;
-    bool chrg = (in & (1ul << 22)) == 0;
-    bool stdby = (in & (1ul << 23)) == 0;
-    return chrg || stdby;
-}
-
 void sleep() {
-    // if (usb_connected()) {
-    //     last_motion = millis();
-    //     return;
-    // }
-
     // stop multiplexing
     TC4->COUNT16.CTRLA.bit.ENABLE = 0;
     while (TC4->COUNT16.STATUS.bit.SYNCBUSY);
     leds_off();
+
+    // disable usb interrupts
+    USBDevice.detach();
+    NVIC_DisableIRQ(USB_IRQn);
+    NVIC_ClearPendingIRQ(USB_IRQn);
 
     // 10 hz low power mode
     acc_reg(0x20, 0x2f);
@@ -795,6 +789,10 @@ void sleep() {
     // run pending isrs
     __ISB();
     accel_flag = false;
+
+    // enable usb interrupts
+    USBDevice.init();
+    USBDevice.attach();
 
     // restore accel settings
     acc_reg(0x20, 0x57);
